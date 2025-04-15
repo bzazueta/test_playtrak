@@ -1,0 +1,64 @@
+# Flutter/Dart/Pub
+.dart_tool/
+.packages
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+.metadata
+
+# IntelliJ/Android Studio
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Android
+android/.gradle/
+android/app/key.jks
+android/key.properties
+
+# iOS
+ios/Flutter/Generated.xcconfig
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/Runner.xcodeproj/project.xcworkspace/
+
+# Web
+web/.dart_tool/
+web/build/
+
+# Windows
+windows/runner/generated_plugin_registrant.cc
+windows/flutter/generated_plugin_registrant.cc
+
+# Linux
+linux/flutter/
+linux/CMakeFiles/
+linux/Makefile
+linux/build/
+
+# Firebase/Secrets (si usás .env)
+.env
+.env.*
+
+# Output binaries
+*.apk
+*.ipa
+*.app
+*.deb
+*.snap
+*.msix
+*.dmg
+*.exe
+
+# Others
+*.lock
+*.log
