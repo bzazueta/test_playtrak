@@ -1,6 +1,10 @@
 # test_playtrack
+Este repositorio es un ejemplo  profesional de una aplicación para el proceso de selección de desarrollador movil
+en playtrak esta aplicación contiene un CRUD el cual permite realizar operaciones como Crear, leer, actualizar y 
+eliminar datos a través de de API en PHP la cual tengo en un servidor expuesto(HOSTGATOR). se eligio esta tecnología 
+para poder consultar los datos de manera remota.
 
-# Flutter MVC App with Dio and GetX
+# Flutter CRUD App con API, Dio, GetX y Modelos
 
 Este es un ejemplo profesional de arquitectura MVC en Flutter con:
 - View o Paginas (StatefulWidget y StatelessWidget)
