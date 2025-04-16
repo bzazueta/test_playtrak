@@ -137,7 +137,7 @@ Tecnología	Descripción
 - app-x86_64-release.apk
 
 ## Crear Bd tablas y relación
-![screenshot_bd](assets/img/bd_releacion.jpeg)
+![screenshot_bd](assets/img/bd_releacion2.jpeg)
 
 - Script para Crear tablas 
 
