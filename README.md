@@ -118,6 +118,14 @@ Tecnología	Descripción
    - Para iOS :
    - flutter run -d ios
 
+## Código para el equipo de desarrollo
+- En código del proyecto puedes ver como estan construidos los modelos,controllers,services,views
+- El código se encuentra comentado
+- Clases
+- Metodos
+- Logica
+- Variables
+
 ## 📁 3. genera el APK
 - Debes ubicarte en carpeta raiz del proyecto  
 - Por ejemplo C:\Users\bzazu\AndroidStudioProjects\test_playtrack>
