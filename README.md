@@ -130,6 +130,6 @@ Tecnología	Descripción
 
 ## Pruebas en Emulador Android
 
-![screenshot_list]((assets/img/screenshot_list.png))
+![screenshot_list](assets/img/screenshot_list.png)
 
 
