@@ -80,42 +80,42 @@ Tecnología	Descripción
 - Google Chrome (para ejecución web)
 
 📦 2. Clonar el proyecto
-    git clone https://github.com/bzazueta/test_playtrak.git
-    cd tu-ruta-repo-flutter  
+   - git clone https://github.com/bzazueta/test_playtrak.git
+   - cd tu-ruta-repo-flutter  
 
 📥 3. Instalar dependencias
-    flutter pub get
+   - flutter pub get
 
 ⚙️ 4. Configurar entorno (si aplica)
     
    🛠 PASO 1: Descargar Flutter SDK
-       Ve a la página oficial:
-       👉 https://flutter.dev/docs/get-started/install/windows
-        Descarga el archivo .zip del SDK para Windows.
-        Extrae el contenido en una carpeta, por ejemplo:
-        C:\src\flutter
+   - Ve a la página oficial:
+   - 👉 https://flutter.dev/docs/get-started/install/windows
+   - Descarga el archivo .zip del SDK para Windows.
+   - Extrae el contenido en una carpeta, por ejemplo:
+   - C:\src\flutter
 
    🧩 PASO 2: Configurar la variable de entorno Path
-      Presiona Win + S y busca "Editar las variables de entorno del sistema".
-      En la ventana, haz clic en el botón "Variables de entorno…".
-      En la sección de Variables del sistema, selecciona Path y haz clic en Editar.
-      Agrega una nueva entrada con la ruta del folder bin de Flutter, por ejemplo:
-      C:\src\flutter\bin
+   - Presiona Win + S y busca "Editar las variables de entorno del sistema".
+   - En la ventana, haz clic en el botón "Variables de entorno…".
+   - En la sección de Variables del sistema, selecciona Path y haz clic en Editar.
+   - Agrega una nueva entrada con la ruta del folder bin de Flutter, por ejemplo:
+   - C:\src\flutter\bin
 
    🔄 PASO 3: Verificar instalación
-      Abre una nueva ventana de PowerShell, CMD o terminal en VS Code o Android studio.
-      ejecuta el comando flutter doctor si todo esta correctamente instaldo deberias ver todas las opciones con el icono check.
+   - Abre una nueva ventana de PowerShell, CMD o terminal en VS Code o Android studio.
+   - ejecuta el comando flutter doctor si todo esta correctamente instaldo deberias ver todas las opciones con el icono check.
       
       Doctor summary (to see all details, run flutter doctor -v):
       [✓] Flutter (Channel stable, 3.x.x, on Microsoft Windows)
    
    ✅ Final
-      Ahora ya puedes correr flutter, flutter create, flutter run, etc. desde cualquier terminal. Si usas VS Code o Android Studio,
-      reinicia el IDE para que reconozca el cambio.
+   - Ahora ya puedes correr flutter, flutter create, flutter run, etc. desde cualquier terminal. Si usas VS Code o Android Studio,
+   - reinicia el IDE para que reconozca el cambio.
 
 📱 5. Ejecutar en un dispositivo móvil Para Android en la terminal:
-      flutter run
-      Para iOS :
-      flutter run -d ios
+   - flutter run
+   - Para iOS :
+   - flutter run -d ios
 
 
