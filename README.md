@@ -30,6 +30,9 @@ Este es un ejemplo profesional de arquitectura MVC en Flutter con:
 - Git (si van a clonar el repositorio)
 - Google Chrome (para ejecución web)
 
+📦 2. Clonar el proyecto
+    git clone https://github.com/tu-equipo/tu-repo-flutter.git
+    cd tu-repo-flutter  
 
 ## Cómo correrlo
 
