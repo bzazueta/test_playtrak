@@ -9,9 +9,9 @@ import 'src/view/pages/users/list_users/ListUserPage.dart';
 
 
 
-/**clase main es la clase principal donde se declara El material app
- * themas de la aplicación
- * rutas **/
+/**clase main es la clase principal donde se declara El GetMaterialApp para indicar a la aplicacion que
+ * GetX manejara las rutas
+ * themas de la aplicación colores**/
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/home', page: () => const Homepage()),
         GetPage(name: '/listUser', page: () =>  ListUserPage()),
         GetPage(name: '/addUser', page: () => const AddUserPage()),
-        GetPage(name: '/editUser', page: () => const EditUserPage()),
+        GetPage(name: '/editUser', page: () =>  EditUserPage()),
       ],
     //home: const Homepage(),
     );

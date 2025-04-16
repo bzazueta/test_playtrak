@@ -151,7 +151,7 @@ class _AdduserPageState extends State<AddUserPage> {
 
       child: ElevatedButton(
         onPressed:(){
-           ///llamamos al método que guarda la infromación del usuario
+           ///llamamos al método que guarda la información del usuario
             _addUserController.addUser(context);
         },
         style:  ElevatedButton.styleFrom(
@@ -187,7 +187,7 @@ class _AdduserPageState extends State<AddUserPage> {
   /// Aquí actualizas variables que afectan la UI para este caso se actualiza la imagen al
   /// capturar la imagen
   void refresh() {
-    setState(() {}); // CTRL + S
+    setState(() {});
   }
 
 }

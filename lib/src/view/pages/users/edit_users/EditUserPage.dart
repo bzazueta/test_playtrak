@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:test_playtrack/src/controllers/EditUserController.dart';
@@ -22,15 +23,29 @@ class _EditUserPageState extends State<EditUserPage> {
   String idUser = "";
   String image = "";
 
+  /// primer método que se ejecuta al cargar la pagina o vista
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ///ejecutar código justo después que los widgets han sido renderizado completamente en pantalla
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      _editUserController.init(context,refresh);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     print('info entro EditUserPage');
     /// Recuperamos los argumentos con Get.arguments
-    final args = Get.arguments as Map;
-    _editUserController.nameUserController.text =  args['name'].toString() ?? '';
-    _editUserController.phoneUserController.text = args['phone'].toString() ?? '';
-    idUser =  args['idUser'].toString();
-    image =  args['image'].toString();
+    final args = Get.arguments as Map<String, dynamic>?;
+    if (args != null && args is Map) {
+      _editUserController.nameUserController.text =  args['name'].toString() ?? '';
+      _editUserController.phoneUserController.text = args['phone'].toString() ?? '';
+      idUser =  args['idUser'].toString();
+      image =  args['image'].toString();
+    }
+
 
 
     double width = MediaQuery.of(context).size.width;
@@ -77,7 +92,7 @@ class _EditUserPageState extends State<EditUserPage> {
           backgroundImage:  _editUserController.imageFile == null
               ? (image.isNotEmpty
               ? NetworkImage(image)
-              : AssetImage('assets/img/user_image.png')) // Cambia la ruta de tu imagen por defecto
+              : AssetImage('assets/img/user_image.png'))
               : FileImage(_editUserController.imageFile!, ),
           radius: 40,
           backgroundColor: Colors.white,
@@ -182,5 +197,11 @@ class _EditUserPageState extends State<EditUserPage> {
 
       ),
     );
+  }
+
+  /// Aquí actualizas variables que afectan la UI para este caso se actualiza la imagen al
+  /// capturar la imagen
+  void refresh() {
+    setState(() {});
   }
 }

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
+///clase o vista que nos permite visualizar la pantalla home la cual contiene una opción
+///para poder usar la funcionalidades de la app se uso StatelessWidget ya que esta vista
+///no requiere de cambios de estados solo es visual y tiene un evento click para enviarte
+///a la pantalla correspondiente
+
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
 
+    ///lista de opciones de funcionalidades para mostrar al usuario
     final options = [
       {
         'title': 'Examen Mobile Playtrak App Crud',
@@ -17,27 +23,7 @@ class Homepage extends StatelessWidget {
         'gradient': [Colors.blue, Colors.lightBlueAccent],
         'route': 'listUser'
       },
-      // {
-      //   'title': 'Agregar Usuarios',
-      //   'description': 'Agregar Usuarios',
-      //   'icon': Icons.person_add_alt_1,
-      //   'gradient': [Colors.purple, Colors.deepPurpleAccent],
-      //   'route': 'listPost2'
-      // },
-      // {
-      //   'title': 'Editar Usuarios',
-      //   'description': 'Editar Usuarios',
-      //   'icon': Icons.edit,
-      //   'gradient': [Colors.orange, Colors.deepOrange],
-      //   'route': 'listPost2'
-      // },
-      // {
-      //   'title': 'Eliminar Usuarios',
-      //   'description': 'Eliminar Usuarios',
-      //   'icon': Icons.delete,
-      //   'gradient': [Colors.red, Colors.redAccent],
-      //   'route': 'listPost2'
-      // },
+
     ];
 
     return Scaffold(
@@ -52,12 +38,12 @@ class Homepage extends StatelessWidget {
             mainAxisSpacing: 16,
           ),
           itemBuilder: (context, index) {
+            ///recorremos la lista de opciones y le pasamos el index del  GridView.builder
             final option = options[index];
+            ///usamos GestureDetector para captuar el evento cuando el usuario haga click en el elementode la lista de opciones que se muestran en la panttalla home
             return GestureDetector(
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Seleccionado:  ${option['route']}')),
-                );
+                ///nos envia a la pantalla correspondiente segun sea el valor de la ruta para este ejemplo solo se usa una ruta
                 Navigator.pushNamed(context, '${option['route']}',arguments:{});
               },
               child: Container(

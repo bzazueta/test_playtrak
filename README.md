@@ -21,6 +21,17 @@ Este es un ejemplo profesional de arquitectura MVC en Flutter con:
 - `controllers/`: lógica de negocio
 - `services/`: servicios API
 
+## 📦 Dependencias en pubspec.yaml:
+dependencies:
+  flutter:
+  sdk: flutter
+    dio: ^5.8.0+1 -> Cliente HTTP para peticiones a la API REST
+    get: ^4.7.2 -> estión de estado reactiva y navegación
+    image_picker: ^0.8.5+3 -> Nos permite realizar capturas de imagenes con el dispositivo
+    sn_progress_dialog: ^1.2.0 -> Nos permite mostrar un dialogo al usuario mientras esta realizando una operación
+    permission_handler: ^12.0.0+1 -> Permite al usuario dar permisos en tiempo de ejecución
+    cupertino_icons: ^1.0.8 ->Habilta los componentes de cupertino
+
 ## 🛠️ Tecnologías utilizadas
 Tecnología	Descripción
 - Flutter	Framework principal de desarrollo móvil
@@ -81,8 +92,9 @@ Tecnología	Descripción
       Ahora ya puedes correr flutter, flutter create, flutter run, etc. desde cualquier terminal. Si usas VS Code o Android Studio,
       reinicia el IDE para que reconozca el cambio.
 
-## Cómo correrlo
+📱 5. Ejecutar en un dispositivo móvil Para Android en la terminal:
+      flutter run
+      Para iOS :
+      flutter run -d ios
 
-```bash
-flutter pub get
-flutter run
+
