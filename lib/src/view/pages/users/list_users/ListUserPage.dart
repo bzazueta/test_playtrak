@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:test_playtrack/src/controllers/DeleteUserController.dart';
 import 'package:test_playtrack/src/controllers/UserController.dart';
 
 class ListUserPage extends StatelessWidget {
@@ -63,7 +62,7 @@ class ListUserPage extends StatelessWidget {
                    color: Colors.grey[100],
                    child: ListView.builder(
                      padding: const EdgeInsets.all(10.0),
-                     itemCount:  userController.filteredItems.length,//filteredUsers.length,
+                     itemCount:  userController.filteredItems.length,
                      itemBuilder: (BuildContext context, int index) {
                        return Card(
                          color: Colors.white,
@@ -78,12 +77,20 @@ class ListUserPage extends StatelessWidget {
                                  children: [
                                    ClipRRect(
                                      borderRadius: BorderRadius.circular(30),
-                                     child: Image.network(
+                                     child:   Image.network(
                                        userController.filteredItems[index].image,
                                        width: 60,
                                        height: 60,
                                        fit: BoxFit.cover,
-                                     ),
+                                       errorBuilder: (context, error, stackTrace) {
+                                         return Image.asset(
+                                           'assets/img/user_image.png',
+                                           width: 60,
+                                           height: 60,
+                                           fit: BoxFit.cover,
+                                         );
+                                       }
+                                     )
                                    ),
                                    Expanded(
                                      child:
@@ -93,17 +100,16 @@ class ListUserPage extends StatelessWidget {
                                          style: const TextStyle(
                                              fontSize: 16.0,
                                              color: Colors.black,
-                                             fontFamily: 'Roboto'
+                                             fontFamily: 'Montserrat'
                                          ),
                                        ),
                                      ),
                                    ),
-                                   Text( userController.filteredItems[index].date.toString(),
-                                     //filteredUsers[index].name,
+                                   Text( userController.filteredItems[index].phone.toString(),
                                      style: const TextStyle(
                                          fontSize: 12.0,
-                                         color: Colors.black54,
-                                         fontFamily: 'RobotoLigth'
+                                         color: Colors.blueAccent,
+                                         fontFamily: 'Montserrat'
                                      ),
                                    ),
                                  ],
@@ -124,14 +130,13 @@ class ListUserPage extends StatelessWidget {
                                  children: [
                                    GestureDetector(
                                      onTap: (){
-                                       Navigator.pushReplacementNamed(context, 'addUser',arguments:{"name": userController.filteredItems[index].name.trim(),"phone":userController.filteredItems[index].phone.trim(),"idUser":userController.filteredItems[index].id});
+                                       Get.offNamed('/addUser');
                                      },
                                      child: Row(
                                        children: [
                                          Container(
                                            margin: const EdgeInsets.only(top:10,left: 5,right: 5),
                                            child: const Text('Agregar',
-                                             //filteredUsers[index].email.toLowerCase(),
                                              style: TextStyle(
                                                  fontSize: 12.0,
                                                  color: Colors.black,
@@ -152,14 +157,13 @@ class ListUserPage extends StatelessWidget {
                                    ),
                                    GestureDetector(
                                      onTap: (){
-                                       Navigator.pushReplacementNamed(context, 'editUser',arguments:{"name": userController.filteredItems[index].name.trim(),"phone":userController.filteredItems[index].phone.trim(),"idUser":userController.filteredItems[index].id});
+                                       Get.offNamed('/editUser',arguments:{"name": userController.filteredItems[index].name.trim(),"phone":userController.filteredItems[index].phone.trim(),"idUser":userController.filteredItems[index].id,"image":userController.filteredItems[index].image});
                                      },
                                      child: Row(
                                        children: [
                                          Container(
                                            margin: const EdgeInsets.only(top:10,left: 5,right: 5),
                                            child: const Text('Editar',
-                                             //filteredUsers[index].email.toLowerCase(),
                                              style: TextStyle(
                                                  fontSize: 12.0,
                                                  color: Colors.black,
@@ -186,7 +190,6 @@ class ListUserPage extends StatelessWidget {
                                          Container(
                                            margin: const EdgeInsets.only(top:10,left: 5,right: 5),
                                            child: const Text('Eliminar',
-                                             //filteredUsers[index].email.toLowerCase(),
                                              style: TextStyle(
                                                  fontSize: 12.0,
                                                  color: Colors.black,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:test_playtrack/src/view/pages/home/HomePage.dart';
 import 'package:test_playtrack/src/view/pages/users/edit_users/EditUserPage.dart';
 import 'src/view/pages/users/add_user/AddUserPage.dart';
@@ -7,7 +9,9 @@ import 'src/view/pages/users/list_users/ListUserPage.dart';
 
 
 
-
+/**clase main es la clase principal donde se declara El material app
+ * themas de la aplicación
+ * rutas **/
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -40,13 +44,23 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-    initialRoute: 'home',
-    routes: {
-    'home': (BuildContext context) => Homepage(),
-    'listUser': (BuildContext context) => ListUserPage(),
-    'addUser': (BuildContext context) => AddUserPage(),
-    'editUser': (BuildContext context) => EditUserPage(),
-    },
+      initialRoute: 'home', /*** aqui en esta parte se declara la ruta inicial al abrir la aplicación **/
+      // routes: {/*** aqui en esta parte se declara el resto de las rutas de la aplicación **/
+      // 'home': (BuildContext context) => Homepage(),
+      // 'listUser': (BuildContext context) => ListUserPage(),
+      // 'addUser': (BuildContext context) => AddUserPage(),
+      // 'editUser': (BuildContext context) => EditUserPage(),
+      // },
+      /** aqui en esta parte se declara el resto de las rutas de la aplicación usamos el gestor
+       * de estados GetX
+       * Navegación más limpia y simple * Pasar argumentos de forma sencilla
+       * Transición entre pantallas fácil y flexible **/
+      getPages: [
+        GetPage(name: '/home', page: () => const Homepage()),
+        GetPage(name: '/listUser', page: () =>  ListUserPage()),
+        GetPage(name: '/addUser', page: () => const AddUserPage()),
+        GetPage(name: '/editUser', page: () => const EditUserPage()),
+      ],
     //home: const Homepage(),
     );
   }

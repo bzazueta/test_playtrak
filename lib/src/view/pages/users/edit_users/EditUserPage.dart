@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:test_playtrack/src/controllers/EditUserController.dart';
+
+/**En esta pantalla podemos ver la UI para editar los datos del usuario la cual es
+ *StatefulWidget ya que para la captura no se necesita un gestor de estados
+ * ya que la vista o UI no cambia reactivamente(Getx RX). ya que la información que
+ * se visualiza en la UI la pasamos por argumentos con Get.offNamed('/editUser',arguments:{})
+ * para no realizar una petición al servidor**/
 
 class EditUserPage extends StatefulWidget {
   const EditUserPage({super.key});
@@ -12,13 +20,18 @@ class _EditUserPageState extends State<EditUserPage> {
 
   EditUserController _editUserController = EditUserController();
   String idUser = "";
+  String image = "";
+
   @override
   Widget build(BuildContext context) {
     print('info entro EditUserPage');
-    final arg = ModalRoute.of(context)!.settings.arguments as Map;
-    _editUserController.nameUserController.text =  arg['name'].toString() ?? '';
-    _editUserController.phoneUserController.text = arg['phone'].toString() ?? '';
-    idUser =  arg['idUser'].toString();
+    /// Recuperamos los argumentos con Get.arguments
+    final args = Get.arguments as Map;
+    _editUserController.nameUserController.text =  args['name'].toString() ?? '';
+    _editUserController.phoneUserController.text = args['phone'].toString() ?? '';
+    idUser =  args['idUser'].toString();
+    image =  args['image'].toString();
+
 
     double width = MediaQuery.of(context).size.width;
     double heigth = MediaQuery.of(context).size.height;
@@ -26,12 +39,48 @@ class _EditUserPageState extends State<EditUserPage> {
       body: Center(
         child: Column(
           children: [
+            GestureDetector(
+              onTap: (){
+                ///navegacion tradicional flutter para cerrar la pantalla como finish de android
+                Navigator.pop(context);
+              },
+              child: Container(
+                  margin: EdgeInsets.only(left:15,top:15),
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.arrow_back_ios)
+              ),
+            ),
             SizedBox(height: heigth * 0.2,),
+            _imageUser(context),
+            SizedBox(height: heigth * 0.1,),
             Text('Editar Usuario', style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),),
             _textFieldUserName(),
             _textFieldUserPhone(),
             _btnCreateUser(context,idUser)
           ],
+        ),
+      ),
+    );
+  }
+
+  ///Widget donde cargamos la imagen del usuario si existe si no agreamos una por default AssetImage('assets/img/user_image.png'))
+  ///si se captura la imagen también se muestra en este widget
+  Widget _imageUser(BuildContext context) {
+    return GestureDetector(
+      onTap: (){
+         _editUserController.showAlertDialog(context);
+      },//
+      child: Container(
+        color: Colors.white10,
+        height: 75,
+        child:  CircleAvatar(
+          backgroundImage:  _editUserController.imageFile == null
+              ? (image.isNotEmpty
+              ? NetworkImage(image)
+              : AssetImage('assets/img/user_image.png')) // Cambia la ruta de tu imagen por defecto
+              : FileImage(_editUserController.imageFile!, ),
+          radius: 40,
+          backgroundColor: Colors.white,
         ),
       ),
     );
@@ -102,14 +151,15 @@ class _EditUserPageState extends State<EditUserPage> {
 
       child: ElevatedButton(
           onPressed:(){
-            _editUserController.editUser(context,idUser);
+            ///llamamos al metod para editar los datos del usuario
+            _editUserController.editUser(context,idUser,image);
           },
           style:  ElevatedButton.styleFrom(
               backgroundColor:  Colors.green[800],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               )
-          ),// _con.isEnable ? _con.createAsunto : (){print('pressed');},//devolon _con.register,// //delivery con.registerDelivery
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

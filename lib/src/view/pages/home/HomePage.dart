@@ -8,33 +8,36 @@ class Homepage extends StatelessWidget {
 
     final options = [
       {
-        'title': 'Listado Usuarios',
-        'description': 'Listado de usuarios',
+        'title': 'Examen Mobile Playtrak App Crud',
+        'description1': 'Listado de usuarios',
+        'description2': 'Agregar usuarios',
+        'description3': 'Editar usuarios',
+        'description4': 'Eliminar usuarios',
         'icon': Icons.person,
         'gradient': [Colors.blue, Colors.lightBlueAccent],
         'route': 'listUser'
       },
-      {
-        'title': 'Agregar Usuarios',
-        'description': 'Agregar Usuarios',
-        'icon': Icons.person_add_alt_1,
-        'gradient': [Colors.purple, Colors.deepPurpleAccent],
-        'route': 'listPost2'
-      },
-      {
-        'title': 'Editar Usuarios',
-        'description': 'Editar Usuarios',
-        'icon': Icons.edit,
-        'gradient': [Colors.orange, Colors.deepOrange],
-        'route': 'listPost2'
-      },
-      {
-        'title': 'Eliminar Usuarios',
-        'description': 'Eliminar Usuarios',
-        'icon': Icons.delete,
-        'gradient': [Colors.red, Colors.redAccent],
-        'route': 'listPost2'
-      },
+      // {
+      //   'title': 'Agregar Usuarios',
+      //   'description': 'Agregar Usuarios',
+      //   'icon': Icons.person_add_alt_1,
+      //   'gradient': [Colors.purple, Colors.deepPurpleAccent],
+      //   'route': 'listPost2'
+      // },
+      // {
+      //   'title': 'Editar Usuarios',
+      //   'description': 'Editar Usuarios',
+      //   'icon': Icons.edit,
+      //   'gradient': [Colors.orange, Colors.deepOrange],
+      //   'route': 'listPost2'
+      // },
+      // {
+      //   'title': 'Eliminar Usuarios',
+      //   'description': 'Eliminar Usuarios',
+      //   'icon': Icons.delete,
+      //   'gradient': [Colors.red, Colors.redAccent],
+      //   'route': 'listPost2'
+      // },
     ];
 
     return Scaffold(
@@ -52,7 +55,6 @@ class Homepage extends StatelessWidget {
             final option = options[index];
             return GestureDetector(
               onTap: () {
-                // Navegar o mostrar acción
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Seleccionado:  ${option['route']}')),
                 );
@@ -93,10 +95,44 @@ class Homepage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      option['description'] as String,
+                      option['description1'] as String,
                       style: const TextStyle(
                         fontSize: 14,
                         color: Colors.white70,
+                      ),
+                    ),
+                    Text(
+                      option['description2'] as String,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    Text(
+                      option['description3'] as String,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    Text(
+                      option['description4'] as String,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    Spacer(),
+                    Container(
+                      width:double.infinity,
+                      child: Text(
+                        'Da click para continuar',
+                        textAlign: TextAlign.end,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                        ),
                       ),
                     ),
                   ],

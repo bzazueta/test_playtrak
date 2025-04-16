@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:test_playtrack/src/controllers/AddUserController.dart';
 
+/**En esta pantalla podemos ver la UI captura de usuario la cual es
+ *StatefulWidget ya que para la captura no se necesita un gestor de estados
+ * ya que la vista o UI no cambia reactivamente(Getx RX) **/
+
 class AddUserPage extends StatefulWidget {
   const AddUserPage({super.key});
 
@@ -11,13 +15,16 @@ class AddUserPage extends StatefulWidget {
 
 class _AdduserPageState extends State<AddUserPage> {
 
+  /// inicializamos el controller es el que contiene todos los metodos
+  /// necesarios para la captura de usuario*
   AddUserController _addUserController = AddUserController();
 
+  /// primer método que se ejecuta al cargar la pagina o vista
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
+    ///ejecutar código justo después que los widgets han sido renderizado completamente en pantalla
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       _addUserController.init(context,refresh);
     });
@@ -25,12 +32,26 @@ class _AdduserPageState extends State<AddUserPage> {
 
   @override
   Widget build(BuildContext context) {
+    ///usamos MediaQuery.of(context).size.width para usar los porcentajes de pantalla lo que nos ayuda hacer el diseño responsivo
+    ///para cualquier pantalla del dispositivo
     double width = MediaQuery.of(context).size.width;
     double heigth = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Center(
         child: Column(
           children: [
+            GestureDetector(
+              onTap: (){
+                ///solo agrego para mostrar navegación tradicional flutter ya que aqui no usamos Getx
+                ///como gestor de estados
+                Navigator.pop(context);
+              },
+              child: Container(
+                  margin: EdgeInsets.only(left:15,top:15),
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.arrow_back_ios)
+              ),
+            ),
             SizedBox(height: heigth * 0.2,),
             _imageUser(context),
             SizedBox(height: heigth * 0.1,),
@@ -47,8 +68,9 @@ class _AdduserPageState extends State<AddUserPage> {
   Widget _imageUser(BuildContext context) {
     return GestureDetector(
       onTap: (){
+         ///metodo para seleccionar la imagen del usuario
         _addUserController.showAlertDialog(context);
-      },//_con.showAlertDialog,
+      },
       child: Container(
         color: Colors.white10,
         height: 75,
@@ -74,7 +96,7 @@ class _AdduserPageState extends State<AddUserPage> {
       child: TextField(
         textCapitalization: TextCapitalization.words,
         style: TextStyle(color: Colors.green[800],fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
-        controller: _addUserController.nameUserController,
+        controller: _addUserController.nameUserController, ///capturamos la información ingresada por el usuario
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
             hintText: 'Nombre Usuario',
@@ -129,6 +151,7 @@ class _AdduserPageState extends State<AddUserPage> {
 
       child: ElevatedButton(
         onPressed:(){
+           ///llamamos al método que guarda la infromación del usuario
             _addUserController.addUser(context);
         },
         style:  ElevatedButton.styleFrom(
@@ -161,6 +184,8 @@ class _AdduserPageState extends State<AddUserPage> {
     );
   }
 
+  /// Aquí actualizas variables que afectan la UI para este caso se actualiza la imagen al
+  /// capturar la imagen
   void refresh() {
     setState(() {}); // CTRL + S
   }

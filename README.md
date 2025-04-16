@@ -21,6 +21,16 @@ Este es un ejemplo profesional de arquitectura MVC en Flutter con:
 - `controllers/`: lógica de negocio
 - `services/`: servicios API
 
+## 🚀 Guía de Implementación para el Equipo de Operaciones
+1. Requisitos previos
+- Asegurate de tener instalado en la máquina:
+- Flutter SDK (versión estable)
+- Android Studio o VS Code
+- Emulador Android o conexión a dispositivo físico
+- Git (si van a clonar el repositorio)
+- Google Chrome (para ejecución web)
+
+
 ## Cómo correrlo
 
 ```bash
