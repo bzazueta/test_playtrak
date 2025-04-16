@@ -118,4 +118,16 @@ Tecnología	Descripción
    - Para iOS :
    - flutter run -d ios
 
+## 📁 3. genera el APK
+- Debes ubicarte en carpeta raiz del proyecto  
+- Por ejemplo C:\Users\bzazu\AndroidStudioProjects\test_playtrack>
+- Para arquitectura específica (más ligero para Play Store):
+- flutter build apk --split-per-abi
+- Esto generará varios APKs:
+- app-arm64-v8a-release.apk
+- app-armeabi-v7a-release.apk
+- app-x86_64-release.apk
 
+## Pruebas en Emulador Android
+
+![screenshot_del1.png](../../Pictures/Nueva%20carpeta/screenshot_del1.png)
