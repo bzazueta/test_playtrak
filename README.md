@@ -23,9 +23,12 @@ Este es un ejemplo profesional de arquitectura MVC en Flutter con:
 
 ## 📦 Dependencias en pubspec.yaml:
 dependencies:
-  flutter:
-  sdk: flutter
-  dio: ^5.8.0+1 -> Cliente HTTP para peticiones a la API REST
+  
+ flutter:
+  
+ sdk: flutter
+  
+ dio: ^5.8.0+1 -> Cliente HTTP para peticiones a la API REST
 
   get: ^4.7.2 -> estión de estado reactiva y navegación
 
