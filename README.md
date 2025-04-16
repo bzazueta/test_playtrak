@@ -136,6 +136,29 @@ Tecnología	Descripción
 - app-armeabi-v7a-release.apk
 - app-x86_64-release.apk
 
+## Crear Bd tablas y relación
+![screenshot_bd](assets/img/bd_releacion.jpeg)
+
+- Script para Crear tablas 
+
+- -- Tabla de usuarios
+  CREATE TABLE usuarios_post (
+  id_user INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  password VARCHAR(255) NOT NULL
+  );
+
+- --Tabla de posts
+CREATE TABLE post (
+id INT AUTO_INCREMENT PRIMARY KEY,
+id_user INT NOT NULL,
+post VARCHAR(500) NOT NULL,
+fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (id_user) REFERENCES usuarios_post(id_user)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+);
+
 ## Pruebas Realizadas en Emulador Android
 ![screenshot_home](assets/img/screenshot_home.png)
 ![screenshot_list](assets/img/screenshot_list.png)
