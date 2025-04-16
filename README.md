@@ -22,24 +22,37 @@ Este es un ejemplo profesional de arquitectura MVC en Flutter con:
 - `services/`: servicios API
 
 ## 📦 Dependencias en pubspec.yaml:
+
 dependencies:
   
  flutter:
   
  sdk: flutter
   
- dio: ^5.8.0+1 -> Cliente HTTP para peticiones a la API REST
+ - dio: ^5.8.0+1 -> Cliente HTTP para peticiones a la API REST
 
-  get: ^4.7.2 -> estión de estado reactiva y navegación
+  - get: ^4.7.2 -> estión de estado reactiva y navegación
 
-  image_picker: ^0.8.5+3 -> Nos permite realizar capturas de imagenes con el dispositivo
+  - image_picker: ^0.8.5+3 -> Nos permite realizar capturas de imagenes con el dispositivo
 
-  sn_progress_dialog: ^1.2.0 -> Nos permite mostrar un dialogo al usuario mientras esta realizando una operación
+  - sn_progress_dialog: ^1.2.0 -> Nos permite mostrar un dialogo al usuario mientras esta realizando una operación
 
-  permission_handler: ^12.0.0+1 -> Permite al usuario dar permisos en tiempo de ejecución
+  - permission_handler: ^12.0.0+1 -> Permite al usuario dar permisos en tiempo de ejecución
     
-  cupertino_icons: ^1.0.8 ->Habilta los componentes de cupertino
+  - cupertino_icons: ^1.0.8 ->Habilta los componentes de cupertino
 
+
+## Implementación de Fuentes e Imagenes utilizadas en pubspec.yaml:
+
+-   assets:
+    - assets/img/
+
+- fonts:
+  - family: Montserrat
+  fonts:
+  - asset: assets/fonts/Montserrat-Regular.ttf
+
+    
 ## 🛠️ Tecnologías utilizadas
 Tecnología	Descripción
 - Flutter	Framework principal de desarrollo móvil
