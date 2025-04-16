@@ -31,8 +31,11 @@ Tecnología	Descripción
 
 ## 🔄 Funcionalidades CRUD
 ✅ Leer: Listado de elementos desde la API
+
 ➕ Crear: Formulario para agregar nuevos datos
+
 ✏️ Actualizar: Edición de elementos existentes
+
 🗑️ Eliminar: Eliminación de elementos con confirmación
 
 ## 🚀 Guía de Implementación para el Equipo de Operaciones
@@ -69,7 +72,8 @@ Tecnología	Descripción
 
    🔄 PASO 3: Verificar instalación
       Abre una nueva ventana de PowerShell, CMD o terminal en VS Code o Android studio.
-      ejecuta el comando flutter doctor si todo esta correctamente instaldo deberias ver todas las opciones con el icono check
+      ejecuta el comando flutter doctor si todo esta correctamente instaldo deberias ver todas las opciones con el icono check.
+      
       Doctor summary (to see all details, run flutter doctor -v):
       [✓] Flutter (Channel stable, 3.x.x, on Microsoft Windows)
    
