@@ -128,8 +128,13 @@ Tecnología	Descripción
 - app-armeabi-v7a-release.apk
 - app-x86_64-release.apk
 
-## Pruebas en Emulador Android
-
+## Pruebas Realizadas en Emulador Android
+![screenshot_home](assets/img/screenshot_home.png)
 ![screenshot_list](assets/img/screenshot_list.png)
-
-
+![screenshot_add_user](assets/img/screenshot_add1.png)
+![screenshot_add_user_add_picture](assets/img/screenshot_addpicture.png)
+![screenshot_add_user_add_take_picture](assets/img/screenshot_takepic.png)
+![screenshot_add_user_add_gallery_picture](assets/img/screenshot_gallery.png)
+![screenshot_edit_user](assets/img/screenshot_edit.png)
+![screenshot_search_user](assets/img/screenshot_filter.png)
+![screenshot_delete_user](assets/img/screenshot_del.png)
